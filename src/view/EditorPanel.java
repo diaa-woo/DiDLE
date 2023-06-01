@@ -1,11 +1,12 @@
+package view;
+
+import function.File.Open;
+import function.File.Save;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class EditorPanel extends JPanel{
     private JPanel editorPanel;
@@ -42,20 +43,10 @@ public class EditorPanel extends JPanel{
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == saveButton) {
-                try {
-                    Path path = Paths.get("C:\\Users\\SW2148\\project\\DiDLE\\src\\out\\test.txt");
-                    Files.write(path, editorTextArea.getText().getBytes());
-                } catch (Exception error) {
-                    error.printStackTrace();
-                }
+                Save.save(editorTextArea.getText());
             }
             else if(e.getSource() == openButton) {
-                try {
-                    String str = Files.readString(Paths.get("C:\\Users\\SW2148\\project\\DiDLE\\src\\out\\test.txt"));
-                    editorTextArea.setText(str);
-                } catch (IOException error) {
-                    error.printStackTrace();
-                }
+                editorTextArea.setText(Open.open());
             }
         }
     }
