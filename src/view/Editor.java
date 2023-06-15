@@ -1,11 +1,13 @@
 package view;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 
 public class Editor extends JFrame {
     private EditorBar eb = new EditorBar();
     private Container myContainer = null;
+    public static JTextArea myText;
 
     public Editor() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,9 +23,10 @@ public class Editor extends JFrame {
             e.printStackTrace();
         }
 
+        eb.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
         setJMenuBar(eb);
 
-        final JTextArea myText = new JTextArea();
+        myText = new JTextArea();
         myText.setLineWrap(true);
         JScrollPane myScroll = new JScrollPane(myText);
 
