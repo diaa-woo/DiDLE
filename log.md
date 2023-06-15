@@ -238,3 +238,6 @@ Instance를 생성할 필요성을 못느껴서 그냥 정적 변수만을 사�
 
 텍스트 패널을 프레임 전체로 확장해서 사용하게끔 해야하는데, Panel을 분리하니 아무리 해도 Frame 크기 전체를 상속받지 못해 결국 Panel을 지우고 Editor에 추가 코드를 넣었습니다
 
+## 7. Edit MenuBar 생성
+swing에 기본 내장되어 있는 `copy()`, `paste()`, `cut()` 함수를 이용하여 편집칸을 제작하였습니다. Funtion에다 따로 기능을 분류하진 않았습니다.   
+또한 Editor의 TextArea를 public으로 두어 접근 가능하도록 두었습니다.
